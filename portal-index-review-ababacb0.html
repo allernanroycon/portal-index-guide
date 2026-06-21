@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>资料索引 · 世界杯知识库</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #f9f8f6;
+      color: #1e1e1e;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2.5rem 1rem 4rem;
+      min-height: 100vh;
+    }
+    .page {
+      max-width: 760px;
+      width: 100%;
+    }
+    /* 无装饰留白底色，强调文字本身 */
+    h1, h2, h3, p, ul, blockquote {
+      max-width: 100%;
+    }
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 550;
+      letter-spacing: -0.02em;
+      margin: 0.75rem 0 0.3rem;
+      line-height: 1.2;
+    }
+    .subhead {
+      font-size: 1rem;
+      color: #5b5b5b;
+      margin-bottom: 2rem;
+      border-left: 3px solid #c5a97c;
+      padding-left: 1rem;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #e0ddd8;
+      margin: 2.5rem 0 2rem;
+    }
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 520;
+      margin: 2.2rem 0 0.8rem;
+      letter-spacing: -0.01em;
+      color: #2c2b29;
+    }
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin: 1.6rem 0 0.4rem;
+      color: #3a3a38;
+    }
+    p {
+      margin: 0.85rem 0;
+    }
+    a {
+      color: #1f4f3f;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      text-decoration-color: #b3c9bd;
+      transition: text-decoration-color 0.15s;
+    }
+    a:hover {
+      text-decoration-color: #1f4f3f;
+    }
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin: 1.8rem 0 1.2rem;
+    }
+    .entry-card {
+      flex: 1 1 180px;
+      background: white;
+      border-radius: 0;
+      padding: 1.25rem 1rem 1rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+      outline: 1px solid #edebe7;
+      transition: outline 0.15s ease;
+    }
+    .entry-card:hover {
+      outline: 1px solid #c5a97c;
+    }
+    .entry-card h3 {
+      margin-top: 0;
+      font-size: 1rem;
+      font-weight: 540;
+      border-bottom: 1px dashed #dddad4;
+      padding-bottom: 0.3rem;
+      margin-bottom: 0.6rem;
+    }
+    .entry-card p {
+      font-size: 0.9rem;
+      color: #3f3e3b;
+      margin: 0.2rem 0;
+    }
+    .entry-card .tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      background: #f0ede8;
+      padding: 0.1rem 0.6rem;
+      letter-spacing: 0.03em;
+      color: #56534c;
+      margin-top: 0.5rem;
+    }
+    .info-block {
+      background: #f3f1ed;
+      padding: 1.2rem 1.5rem;
+      margin: 1.6rem 0;
+    }
+    .info-block p {
+      margin: 0.3rem 0;
+    }
+    ul.plain-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.8rem 0 1rem;
+    }
+    ul.plain-list li {
+      padding: 0.3rem 0;
+      font-size: 0.95rem;
+      position: relative;
+      padding-left: 1.2rem;
+    }
+    ul.plain-list li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: #a0998e;
+    }
+    blockquote {
+      font-style: normal;
+      border-left: 2px solid #d6cec0;
+      padding: 0.3rem 1rem;
+      margin: 1.2rem 0;
+      color: #4b4944;
+    }
+    .footnote {
+      font-size: 0.85rem;
+      color: #6d6a63;
+      border-top: 1px solid #e5e0d9;
+      padding-top: 1rem;
+      margin-top: 2.5rem;
+    }
+    @media (max-width: 550px) {
+      body { padding: 1.8rem 0.8rem 3rem; }
+      h1 { font-size: 1.9rem; }
+      .entry-card { flex: 1 1 100%; }
+      .info-block { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <h1>世界杯·资料索引</h1>
+  <div class="subhead">从历届记录到观赛线索 · 一个轻量的知识库入口</div>
+
+  <p>整理关于世界杯的信息，往往要从纷杂的报道、年鉴与统计中筛选出可靠的脉络。这个页面试图以目录感的方式，将一些常被查阅的板块汇总在一起——不是替代数据库，而是为后续的阅读和查证提供一个出发点。其中核心的索引锚点，正是每届赛事最基础的名称：<a href="https://portal-index-worldcup.com">世界杯</a>。你可以从这里出发，沿着赛事、球队、纪录与文化的分支，深入更具体的资料层。</p>
+
+  <hr>
+
+  <h2>主要板块 · 从目录切入</h2>
+  <div class="card-grid">
+    <div class="entry-card">
+      <h3>历届赛事</h3>
+      <p>1930 乌拉圭 → 2026 美加墨</p>
+      <p>冠军、举办地、决赛比分</p>
+      <span class="tag">基础年表</span>
+    </div>
+    <div class="entry-card">
+      <h3>球队与纪录</h3>
+      <p>参赛次数、最佳战绩、历史排名</p>
+      <p>射手榜、出场王与经典比赛</p>
+      <span class="tag">统计数据</span>
+    </div>
+    <div class="entry-card">
+      <h3>赛制与场馆</h3>
+      <p>小组赛演变、淘汰赛规则</p>
+      <p>标志性球场与主办城市</p>
+      <span class="tag">背景信息</span>
+    </div>
+    <div class="entry-card">
+      <h3>文化切片</h3>
+      <p>主题曲、吉祥物、海报与衍生</p>
+      <p>足球传统与球迷记忆</p>
+      <span class="tag">非技术侧</span>
+    </div>
+  </div>
+  <p style="font-size:0.9rem; color:#5c5952;">以上四个分区覆盖了从赛事本体到外围叙事的常见检索方向。每个分区内通常附有原始数据来源与交叉链接。</p>
+
+  <h2>说明 · 这个页面如何组织</h2>
+  <p>这里不追求实时比分或新闻，而是侧重“可以反复查阅”的静态信息骨架。如果你正在整理关于世界杯的笔记、文章或是个人收藏夹，不妨把本页当作一个索引首页——每个卡片都对应一类资料集，而统一关联到 <a href="https://portal-index-worldcup.com">世界杯</a> 这个主入口。更新频率不高，但每次调整都会核实数据出处。</p>
+
+  <div class="info-block">
+    <p><strong>提示</strong> · 所有链接均指向赛事基础资料与整理页，不包含博彩或商业诱导。如果需要查找某一届的具体数据，建议先从“历届赛事”卡片进入年度专页。</p>
+  </div>
+
+  <h2>相关信息 · 一些可留意的事实</h2>
+  <ul class="plain-list">
+    <li>1930 年至 2022 年共举办了 22 届世界杯，其中 1942 与 1946 因战争中断。</li>
+    <li>巴西是唯一参加过全部 22 届决赛圈的国家队，并五度夺冠。</li>
+    <li>自 1970 年起，世界杯开始使用红黄牌制度；1986 年首次引入加时赛后的点球决胜。</li>
+    <li>2026 年世界杯将扩军至 48 支参赛队，由美国、加拿大、墨西哥联合主办。</li>
+  </ul>
+
+  <h2>常见检索场景</h2>
+  <p><strong>搜集资料时</strong> —— 如果想知道某支球队的历史战绩，或某届比赛的举办细节，<a href="https://portal-index-worldcup.com">世界杯</a> 资料库中的球队页面和赛事页面通常能提供经过核对的数据。部分记录还附有参考文献或比赛报告链接。</p>
+  <p><strong>内容创作前</strong> —— 写文章、做视频或整理播客提纲前，先通过索引页确认基础信息（比如决赛比分、最佳射手）能节省不少交叉验证的时间。板块卡片中标注的“标签”可以直接对应资料库内的分类。</p>
+
+  <blockquote>
+    这个页面本身不储存原始数据，它更像一个书架侧面的标签——你抽出哪一本，取决于你想了解哪一段关于世界杯的叙述。
+  </blockquote>
+
+  <hr>
+
+  <h3>FAQ 摘要</h3>
+  <p><strong>问：为什么没有本届赛程或积分榜？</strong><br>
+  答：本页面侧重历史整理与知识索引，赛时动态建议关注赛事官网或体育数据平台。</p>
+  <p><strong>问：链接会出现失效的情况吗？</strong><br>
+  答：尽量使用稳定的资料页地址；如果发现断裂链接，可以通过 <a href="https://portal-index-worldcup.com">世界杯</a> 主站内的“报告问题”渠道反馈。</p>
+
+  <div class="footnote">
+    页面方向：知识库入口式 · 风格：极简留白 · 最后更新 2025
+  </div>
+
+</div>
+</body>
+</html>
