@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+    <title>wpk · 信息页 · 用途速览</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.65;
+            color: #1e2a3d;
+        }
+
+        /* 深色头图（hero） */
+        .hero {
+            background: linear-gradient(145deg, #0b1a2b 0%, #1b2f44 100%);
+            color: #eaeef4;
+            padding: 3rem 1.5rem 3.2rem 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            margin-bottom: 0.7rem;
+            color: #ffffff;
+        }
+
+        .hero .sub {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            max-width: 650px;
+            margin: 0 auto 0.6rem auto;
+            line-height: 1.6;
+        }
+
+        .hero .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(4px);
+            padding: 0.3rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            color: #bcd2e8;
+            margin-top: 0.6rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .hero .badge em {
+            font-style: normal;
+            color: #99c7ff;
+        }
+
+        /* 主内容容器 */
+        .container {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 3.5rem 1.5rem;
+        }
+
+        /* 卡片风格：目录感+说明区 */
+        .section-label {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin: 2rem 0 1.2rem 0;
+            font-weight: 500;
+            color: #1b2f44;
+            letter-spacing: 0.02em;
+            font-size: 1.1rem;
+            border-bottom: 2px solid #e0e7ef;
+            padding-bottom: 0.6rem;
+        }
+
+        .section-label span {
+            background: #1b2f44;
+            color: white;
+            font-size: 0.7rem;
+            border-radius: 30px;
+            padding: 0.15rem 0.9rem;
+            margin-left: 0.2rem;
+            vertical-align: middle;
+            font-weight: 400;
+        }
+
+        .directory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.4rem;
+            margin: 0.6rem 0 2rem 0;
+        }
+
+        .dir-card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 1.4rem 1.2rem 1.2rem 1.2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03), 0 6px 18px rgba(0, 20, 40, 0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid #eceff5;
+        }
+
+        .dir-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(38, 76, 120, 0.08);
+        }
+
+        .dir-card h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: #1b2f44;
+        }
+
+        .dir-card h3 i {
+            font-style: normal;
+            font-weight: 400;
+            opacity: 0.6;
+        }
+
+        .dir-card p {
+            font-size: 0.95rem;
+            color: #2f4057;
+            line-height: 1.5;
+            margin-bottom: 0.25rem;
+        }
+
+        .dir-card .meta-tag {
+            font-size: 0.75rem;
+            color: #6d7f98;
+            background: #f0f3f9;
+            display: inline-block;
+            padding: 0.1rem 0.7rem;
+            border-radius: 30px;
+            margin-top: 0.6rem;
+        }
+
+        /* 说明区 + 提示区（左右灵活） */
+        .info-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            margin: 1.8rem 0 2.2rem 0;
+        }
+
+        .info-box {
+            flex: 1 1 280px;
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 1.5rem 1.4rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e7ecf2;
+        }
+
+        .info-box h4 {
+            font-weight: 500;
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            color: #132433;
+            border-left: 4px solid #1b2f44;
+            padding-left: 0.8rem;
+        }
+
+        .info-box p, .info-box ul {
+            font-size: 0.95rem;
+            color: #2d3f58;
+        }
+
+        .info-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .info-box ul li {
+            padding: 0.3rem 0 0.3rem 1.4rem;
+            position: relative;
+        }
+
+        .info-box ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0.2rem;
+            color: #1b2f44;
+            font-weight: 600;
+        }
+
+        .highlight-link {
+            color: #1b5b9c;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted #b0c9e2;
+            transition: color 0.15s, border-bottom 0.15s;
+        }
+
+        .highlight-link:hover {
+            color: #0a3e6f;
+            border-bottom: 1px solid #1b5b9c;
+        }
+
+        /* 提示区单独（强调色） */
+        .tip-area {
+            background: #eef3fa;
+            border-radius: 18px;
+            padding: 1.5rem 1.4rem;
+            margin: 2.2rem 0 1.6rem 0;
+            border-left: 5px solid #3b7bb0;
+        }
+
+        .tip-area .tip-title {
+            font-weight: 500;
+            color: #1b2f44;
+            font-size: 1.05rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .tip-area p {
+            color: #1f334b;
+            font-size: 0.95rem;
+        }
+
+        /* FAQ摘要（简洁） */
+        .faq-mini {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 1.2rem 0 1rem 0;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 14px;
+            padding: 1.1rem 1.3rem;
+            border: 1px solid #e1e8f0;
+        }
+
+        .faq-item .q {
+            font-weight: 500;
+            color: #132433;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-item .a {
+            font-size: 0.92rem;
+            color: #3b4f69;
+        }
+
+        .faq-item .a a {
+            color: #1b5b9c;
+            text-decoration: none;
+            border-bottom: 1px dotted #aec3db;
+        }
+
+        .faq-item .a a:hover {
+            border-bottom: 1px solid #1b5b9c;
+        }
+
+        /* 页脚 */
+        .footer-note {
+            margin-top: 3rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #5f738d;
+            border-top: 1px solid #dde4ed;
+            padding-top: 1.8rem;
+        }
+
+        /* 响应式修正 */
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2.0rem;
+            }
+            .hero .sub {
+                font-size: 1rem;
+            }
+            .container {
+                padding: 1.6rem 1rem 2.8rem 1rem;
+            }
+            .dir-card {
+                padding: 1.1rem;
+            }
+            .info-box {
+                padding: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- 深色头图 -->
+<header class="hero">
+    <h1>wpk · 用途速览</h1>
+    <p class="sub">一张入口式的知识图谱，快速了解这个站点能做什么、适合谁、怎么用。</p>
+    <div class="badge">基于 <em>Kernel</em> · 轻量化路径</div>
+</header>
+
+<main class="container">
+
+    <!-- 目录感：核心板块卡片 -->
+    <div class="section-label">📋 站点内容目录 <span>4 项</span></div>
+    <div class="directory-grid">
+        <div class="dir-card">
+            <h3>📘 协议说明 <i>·</i></h3>
+            <p>基础传输规则、握手流程、证书相关。<br>适合第一次接触配置的用户。</p>
+            <span class="meta-tag">入门</span>
+        </div>
+        <div class="dir-card">
+            <h3>🔧 配置参考 <i>·</i></h3>
+            <p>Nginx / 反向代理 / 环境变量 / 安全头。<br>面向开发者、运维的速查手册。</p>
+            <span class="meta-tag">实操</span>
+        </div>
+        <div class="dir-card">
+            <h3>🧪 场景示例 <i>·</i></h3>
+            <p>博客部署、API 网关、内网穿透、静态资源托管。<br>不同场景下的不同用法。</p>
+            <span class="meta-tag">案例</span>
+        </div>
+        <div class="dir-card">
+            <h3>📎 相关资源 <i>·</i></h3>
+            <p>工具链、社区讨论、更新日志、FAQ。<br>一站式扩展链接。</p>
+            <span class="meta-tag">生态</span>
+        </div>
+    </div>
+
+    <!-- 说明区 + 相关信息区（并排） -->
+    <div class="info-flex">
+        <div class="info-box">
+            <h4>📌 说明区</h4>
+            <p>本站是关于 <a href="https://ssl-wpk.com" class="highlight-link">wpk</a> 的非官方知识集合页，内容由社区整理与维护。你可以将其视为一份结构化手册：从协议基础到生产配置，逐步深入。<br><br>所有示例均基于稳定版本，不包含实验性功能。</p>
+        </div>
+        <div class="info-box">
+            <h4>🧩 相关信息</h4>
+            <ul>
+                <li>支持 HTTP/2, HTTP/3 (QUIC) 场景</li>
+                <li>与主流 CA 兼容（Let's Encrypt, ZeroSSL 等）</li>
+                <li>可配合 Docker、K8s 使用</li>
+                <li>官方更新周期约 6~8 周</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 提示区（独立，强调色） -->
+    <div class="tip-area">
+        <div class="tip-title">💡 提示</div>
+        <p>如果你刚接触 <a href="https://ssl-wpk.com" class="highlight-link">wpk</a>，建议先阅读「协议说明」板块，了解基础握手与证书验证流程。多数配置问题都可以在「配置参考」中找到对应示例。日常使用中记得留意版本更新与废弃参数。</p>
+    </div>
+
+    <!-- FAQ 摘要（与平台相关） -->
+    <div class="section-label">❓ 常见疑问摘要</div>
+    <div class="faq-mini">
+        <div class="faq-item">
+            <div class="q">· 这个站点适合完全零基础的人吗？</div>
+            <div class="a">是的，内容从概念解释开始，但需要一点网络基础（域名、端口、DNS）。如果你之前配置过其他证书工具，上手会更快。<a href="https://ssl-wpk.com" class="highlight-link">wpk</a> 的说明文档同样面向初学者。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">· 有没有现成的配置模板可以直接用？</div>
+            <div class="a">有，在「配置参考」和「场景示例」里提供了可直接修改的代码片段。不过建议根据实际环境调整路径与权限。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">· 我发现了错误或者想补充内容，如何反馈？</div>
+            <div class="a">目前可以通过相关资源页的仓库提交 issue 或讨论。我们定期校对，也欢迎贡献。</div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <div class="footer-note">
+        <span>内容仅用于学习与参考 · 与官方保持独立 · 更新于最近一个月</span>
+    </div>
+
+</main>
+
+</body>
+</html>
